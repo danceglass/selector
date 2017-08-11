@@ -56,10 +56,10 @@
       -ms-user-select: none;
     }
 
-    .dccon>.card>.card-body {
+/*    .dccon>.card>.card-body {
       height: 70px;
     }
-
+*/
     #search_clear {
       cursor: pointer;
     }
@@ -100,6 +100,8 @@
       -webkit-transform: translate(-50%, -81px);
       -ms-transform: translate(-50%, -81px);
       transform: translate(-50%, -81px);
+			
+		.col-15 { width:12.5%; }
     }
   </style>
 </head>
@@ -181,16 +183,17 @@
           dcconKeywordList.push(keyword);
           autocompleteData[keyword] = dccon.path;
           $('div.dccon-list').append(
-            '<div class="dccon column col-xs-6 col-md-4 col-lg-3 col-xl-2 col-2 tooltip tooltip-bottom" data-keyword="' + keyword + '" data-tags="' + dccon.tags.join(',') + '" data-clipboard-text="~' + keyword + '" data-tooltip="' + dccon.keywords
+/*            '<div class="dccon column col-xs-6 col-md-4 col-lg-3 col-xl-2 col-2 tooltip tooltip-bottom" data-keyword="'*/
+							'<div class="dccon column col-xs-6 col-md-4 col-lg-3 col-xl-2 col-15 tooltip tooltip-bottom" data-keyword="' + keyword + '" data-tags="' + dccon.tags.join(',') + '" data-clipboard-text="~' + keyword + '" data-tooltip="' + dccon.keywords
             .join(', ') + '">' +
             '  <div class="card">' +
             '    <div class="card-image">' +
             '      <img class="img-responsive width100 lazy" data-src="' + dccon.path + '">' +
             '    </div>' +
-            '    <div class="card-body">' +
+/*            '    <div class="card-body">' +
             keyword +
             '    </div>' +
-            '  </div>' +
+*/            '  </div>' +
             '</div>');
           $('#autocomplete').append(
             '<li class="menu-item">' +
