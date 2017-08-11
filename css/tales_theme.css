@@ -35,7 +35,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											margin:20px 0 0; padding:5px 40px 5px 5px;
 											box-sizing:border-box; text-align:right; }
 .chat_text_message	{	height:auto; max-height:160px;
-											margin:10px; margin-top:calc(-1em - 25px);
+											margin-top:calc(-1em - 25px);
 											padding:5px; }
 
 
