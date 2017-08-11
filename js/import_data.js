@@ -13,15 +13,16 @@ function getUrlParameter(sParam) {
 	}
 };
 
-function init(dcconList) {
-/* 페이지가 로드되면 url에서 dcconList를 받고 기능 초기화 */
+
+function dcconInit(highlightList, dcconList) {
+/* url에서 리스트를 받고 각 함수 선언 */
 
 	var dcconSearchMap = {};		// keyword로 dccon을 검색하기 위한 맵
 	var dcconKeywordList = [];	// 전체 keyword 리스트
 	var twitchEmotesUrlTemplate = "";
 	var twitchEmotesMap = {};
 	
-	/* url에서 받아온 각 dccon을 맵과 리스트에 등록 */
+	/* url에서 받아온 각 디씨콘을 맵과 리스트에 등록 */
 	for (var i=0; i<dcconList.length; ++i) {
 		var dccon = dcconList[i];
 		for (var j=0; j<dccon.keywords.length; ++j) {
@@ -30,11 +31,6 @@ function init(dcconList) {
 			dcconKeywordList.push(keyword);
 		}
 	}
-	
-	/* 긴 키워드부터 탐색해야 정확하므로 리스트를 키워드 길이기준 정렬 */
-	dcconKeywordList.sort(function(a,b) {
-		return a.length < b.length;
-	});
 	
 	/* 트위치 기본 감정표현을 맵과 템플릿에 등록 */
 	$.getJSON('https://twitchemotes.com/api_cache/v2/global.json',
@@ -62,7 +58,29 @@ function init(dcconList) {
 					}
 				});
 		});
+		
 	
+	/* 긴 키워드부터 탐색해야 정확하므로 디씨콘 키워드 리스트를 키워드 길이기준 정렬 */
+	dcconKeywordList.sort(function(a,b) {
+		return a.length < b.length;
+	});
+	
+	/* 하이라이트 리스트 정렬 */	
+	highlightList.sort(function(a,b) {
+		return a.length < b.length;
+	});
+	
+	
+	/* 메세지의 강조 표현에 태그 추가 */
+	function highlightTagging(message) {
+		for (var i=0; i<highlightList.length; ++i) {
+			if (message.indexOf(highlightList[i]) != -1) {
+				message = '<span class="highlight">' + message + '</span>';
+			}
+		}
+		return message;
+	}
+
 	/* 메세지의 디씨콘을 이미지로 치환 */
 	function replaceDccon(message) {
 		for (var i=0; i<dcconKeywordList.length; ++i) {
@@ -103,6 +121,7 @@ function init(dcconList) {
 	originalJqueryText = jQuery.fn.text;
 	function hackedJqueryText() {
 		var msg = originalJqueryText.apply(this, arguments);
+		msg = highlightTagging(msg);
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		return msg;
@@ -119,25 +138,41 @@ function init(dcconList) {
 }
 
 $(document).ready(function() {
-	var dcconListUrl = getUrlParameter('dccon_list');
-	if (dcconListUrl == undefined) {
-		/* json 경로를 받아오지 못했을 때 예외처리 */
-		dcconListUrl = 'https://rawgit.com/rishubil/jsassist-open-dccon/master/js/dccon_list.json';
+	/* 하이라이트 json 경로 받아오기 */
+	var highlightListUrl = getUrlParameter('highlight');
+	if (highlightListUrl == undefined) {
+		highlightListUrl = 'https://krynen.github.io/jsassist-custom-css/js/highlight_list.json';
 	}
-	$.getJSON(dcconListUrl).done(function(data) {
-		/* 경로의 json파일을 읽고 init(); */
-		dcconList = data.dccons;
-		init(dcconList);
+	$.getJSON(highlightListUrl).done(function(data1) {
+		var highlightList = data1.highlights;
+	
+		/* 디씨콘 json 경로 받아오기 */
+		var dcconListUrl = getUrlParameter('dccon_list');
+		if (dcconListUrl == undefined) {
+			dcconListUrl = 'https://krynen.github.io/jsassist-custom-css/js/dccon_list.json';
+		}
+		$.getJSON(dcconListUrl).done(function(data2) {
+			/* 경로의 json파일을 읽고 init(); */
+			var dcconList = data2.dccons;
+			init(highlightList, dcconList);
+		}).fail(
+			function(jqxhr, textStatus, error) {
+				var err = textStatus + ", " + error;
+				console.log("Request Failed: " + err);
+				init(highlightList, dcconList);
+			});
+			
 	}).fail(
 		function(jqxhr, textStatus, error) {
 			var err = textStatus + ", " + error;
-			console.log("Request Failed: " + err);
-			init(dcconList);
+			console.log("request Failed: " + err);
+			highlightInit(highlightList);
 		});
 		
+	
+	/* css 경로 받아오기 */
 	var customCssUrl = getUrlParameter('custom_css');
 	if (customCssUrl == undefined) {
-		/* css 경로를 받아오지 못했을 때 예외처리 */
 		customCssUrl = 'https://krynen.github.io/jsassist-custom-css/css/default_styles.css';
 	}
 	$('head').append(

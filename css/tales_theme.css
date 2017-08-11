@@ -8,15 +8,18 @@
 
 
 /* 애니메이션 정의 */
-@-webkit-keyframes ToLeft {
-	0%	{ -webkit-transform:translateX(100%); }
-	to	{ -webkit-transform:none; } }
 @keyframes ToLeft {
 	0%	{ transform:translateX(100%); }
 	to	{ transform:none; } }
 .chat_text_nickname,
 .chat_text_message	{	animation:ToLeft .5s ease forwards; 
 											-webkit-animation:ToLeft .5s ease forwards;}
+@keyframes Highlight
+{ 0%, 100%	{	opacity:1; }
+  25%, 75%	{	opacity:0.5; }
+  50%				{	opacity:1; mix-blend-mode:exclusion;} }
+
+span { animation: blinkAni 2s steps(3) infinite !important; }
 	
 	
 /* 채팅 범위가 범위에 가득 차도록 */
@@ -55,7 +58,8 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											position:relative; z-index:0; overflow:hidden; }
 
 /* 폰트 설정 */
-.chat_text_message {	font-family:inherit !important;
+.chat_text_nickname	{	font-size:0.9em !important; }
+.chat_text_message	{	font-family:inherit !important;
 											font-size:1em !important;
 											color:rgb(192,80,12) !important;
 											text-shadow:0 -1px 1px rgba(0,0,0,0.8); }
