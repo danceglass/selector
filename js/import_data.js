@@ -143,7 +143,7 @@ $(document).ready(function() {
 		customCssUrl = 'https://krynen.github.io/jsassist-custom-css/css/default_styles.css';
 	}
 	$('head').append(
-		'<link rel="stylesheet" href="' + customCssUrl '" />');
+		'<link rel="stylesheet" href="' + customCssUrl + '" />');
 });
 
 /* JSAssist의 connect_jsassist를 재구현 */
