@@ -93,7 +93,7 @@ function init(dcconList) {
 	addChatMessage = function(platform, username, message) {
 		jQuery.fn.text = hackedJqueryText;
 		var result = originalAddChatMessage(
-			platform, username, message)l;
+			platform, username, message);
 		jQuery.fn.text = originalJqueryText;
 		return result;
 	};
