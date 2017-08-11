@@ -14,7 +14,7 @@ function getUrlParameter(sParam) {
 };
 
 
-function dcconInit(highlightList, dcconList) {
+function init(highlightList, dcconList) {
 /* url에서 리스트를 받고 각 함수 선언 */
 
 	var dcconSearchMap = {};		// keyword로 dccon을 검색하기 위한 맵
