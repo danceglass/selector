@@ -73,9 +73,12 @@ function init(highlightList, dcconList) {
 	
 	/* 메세지의 강조 표현에 태그 추가 */
 	function highlightTagging(message) {
+	alert("1");
 		for (var i=0; i<highlightList.length; ++i) {
 			if (message.indexOf(highlightList[i]) != -1) {
+			alert(message);
 				message = '<span class="highlight">' + message + '</span>';
+				alert(message);
 			}
 		}
 		return message;
