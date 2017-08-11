@@ -65,7 +65,6 @@ function init(dcconList) {
 	
 	/* 메세지의 디씨콘을 이미지로 치환 */
 	function replaceDccon(message) {
-alert(message);
 		for (var i=0; i<dcconKeywordList.length; ++i) {
 			var keyword = dcconKeywordList[i];
 			if (message.indexOf(keyword) != -1) {
@@ -75,10 +74,9 @@ alert(message);
 			}
 		}
 		
-		if ((message.charAt(0) == '<') && (message[message.length-1] == '>')) {
-			message = '<center>' + message + '</center>';
-		}
-alert(message);
+		
+		if (message.search(/\s*<[^<>]*>\s*/g) {
+			message = '<center>' + message + '</center>'; }
 		return message;
 	}
 	
