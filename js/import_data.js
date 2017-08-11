@@ -68,7 +68,7 @@ function init(dcconList) {
 alert(message);
 		for (var i=0; i<dcconKeywordList.length; ++i) {
 			var keyword = dcconKeywordList[i];
-			if (message.indexof(keyword) != -1) {
+			if (message.indexOf(keyword) != -1) {
 				var dccon = dcconSearchMap[keyword];
 				message = message.split(keyword).join(
 					'<img class="dccon" src="' + dccon.path + '" />');
