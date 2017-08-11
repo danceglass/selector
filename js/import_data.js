@@ -75,7 +75,7 @@ function init(dcconList) {
 		}
 		
 		
-		if (message.search(/\s*<[^<>]*>\s*/g) {
+		if (message.search(/\s*<[^<>]*>\s*/g) == 0) {
 			message = '<center>' + message + '</center>'; }
 		return message;
 	}
