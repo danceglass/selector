@@ -9,11 +9,15 @@
 
 /* 애니메이션 정의 */
 @-webkit-keyframes ToLeft {
-	0%	{ -webkit-transform:translate3d(calc(100% - 2000px),0,0); }
+	0%	{ -webkit-transform:translateX(calc(100% - 2000px)); }
 	to	{ -webkit-transform:none; } }
 @keyframes ToLeft {
-	0%	{ transform:translate3d(calc(100% - 2000px),0,0); }
+	0%	{ transform:translateX(calc(100% - 2000px)); }
 	to	{ transform:none; } }
+.chat_text_nickname,
+.chat_text_message	{	animation:ToLeft .5s ease forwards; 
+											-webkit-animation:ToLeft .5s ease forwards;}
+	
 	
 /* 채팅 범위가 범위에 가득 차도록 */
 html, body			{ margin:0; padding:0; overflow:hidden; }
@@ -38,8 +42,10 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 /* 배경 그래픽 지정 */
 .chat_text_nickname	{	position:relative; z-index:1;
 											background-image:linear-gradient(
-												70deg, transparent 50%,
-												rgb(192,80,12) 80%, transparent 90%); }
+												70deg,
+												transparent calc(100% - 150px),
+												rgb(192,80,12) calc(100% - 60px),
+												transparent calc(100% - 30px)); }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 				url(https://krynen.github.io/jsassist-custom-css/images/blob.png);
