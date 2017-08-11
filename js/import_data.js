@@ -49,7 +49,7 @@ function init(dcconList) {
 			
 			/* 구독자 아이콘을 등록 */
 			$.getJSON(
-				'	https://twitchemotes.com/api_cache/v2/subscriber.json',
+				'https://twitchemotes.com/api_cache/v2/subscriber.json',
 				function(data2) {
 					for (var channel_name in data2.channels) {
 						if (data2.channels.hasOwnProperty(channel_name)) {
@@ -65,6 +65,7 @@ function init(dcconList) {
 	
 	/* 메세지의 디씨콘을 이미지로 치환 */
 	function replaceDccon(message) {
+alert(message);
 		for (var i=0; i<dcconKeywordList.length; ++i) {
 			var keyword = dcconKeywordList[i];
 			if (message.indexof(keyword) != -1) {
@@ -73,6 +74,11 @@ function init(dcconList) {
 					'<img class="dccon" src="' + dccon.path + '" />');
 			}
 		}
+		
+		if ((message.charAt(0) == '<') && (message[message.length-1] == '>')) {
+			message = '<center>' + message + '</center>';
+		}
+alert(message);
 		return message;
 	}
 	
