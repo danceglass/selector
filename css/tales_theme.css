@@ -12,13 +12,12 @@
 	0%	{ transform:translateX(100%); }
 	to	{ transform:none; } }
 .chat_text_nickname,
-.chat_text_message	{	animation:ToLeft .5s ease forwards; 
-											-webkit-animation:ToLeft .5s ease forwards;}
+.chat_text_message	{	animation:ToLeft .5s ease forwards; }
 @keyframes Highlight
 { 0%, 100%	{	opacity:1; }
   25%, 75%	{	opacity:0.5; }
-  50%				{	opacity:1; mix-blend-mode:exclusion;} }
-.highlight { animation: blinkAni 2s steps(3) infinite !important; }
+  50%				{	opacity:1; mix-blend-mode:exclusion; } }
+.highlight { animation:blinkAni 2s linear infinite; }
 	
 	
 /* 채팅 범위가 범위에 가득 차도록 */
