@@ -63,7 +63,7 @@ function init(dcconList) {
 	
 	/* 트위치 감정표현을 이미지로 치환 */
 	function replaceTwitchEmotes(message) {
-		if (message.match(/\n\S*?\n/g) {
+		if (message.match(/\n\S*?\n/g)) {
 			for (var emote_keyword in twitchEmotesMap) {
 				if (twitchEmotesMap.hasOwnProperty(emote_keyword)) {
 					var search_keyword = '\n' + emote_keyword + '\n';
