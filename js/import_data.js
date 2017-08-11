@@ -1,9 +1,9 @@
 function getUrlParameter(sParam) {
 	var sPageURL = decodeURIComponent(
-		window.location.search.substring(1)),
-		sURLVariables = sPageURL.split('&'),
-		sParameterName,
-		i;
+		window.location.search.substring(1));
+	var sURLVariables = sPageURL.split('&');
+	var sParameterName, i;
+	
 	for (i=0; i<sURLVariables.length; ++i) {
 		sParameterName = sURLVariables[i].split('=');
 		
@@ -117,9 +117,11 @@ function init(dcconList) {
 $(document).ready(function() {
 	var dcconListUrl = getUrlParameter('dccon_list');
 	if (dcconListUrl == undefined) {
-		dcconListUrl = 'https://rawgit.com/rishubil/jsassist-open-dccon/master/js/dccon_list.json'
+		/* json 경로를 받아오지 못했을 때 예외처리 */
+		dcconListUrl = 'https://rawgit.com/rishubil/jsassist-open-dccon/master/js/dccon_list.json';
 	}
 	$.getJSON(dcconListUrl).done(function(data) {
+		/* 경로의 json파일을 읽고 init(); */
 		dcconList = data.dccons;
 		init(dcconList);
 	}).fail(
@@ -128,6 +130,14 @@ $(document).ready(function() {
 			console.log("Request Failed: " + err);
 			init(dcconList);
 		});
+		
+	var customCssUrl = getUrlParameter('custom_css');
+	if (customCssUrl == undefined) {
+		/* css 경로를 받아오지 못했을 때 예외처리 */
+		customCssUrl = 'https://krynen.github.io/jsassist-custom-css/css/default_styles.css';
+	}
+	$('head').append(
+		'<link rel="stylesheet" href="' + customCssUrl '" />');
 });
 
 /* JSAssist의 connect_jsassist를 재구현 */
