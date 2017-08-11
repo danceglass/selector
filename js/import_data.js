@@ -43,7 +43,7 @@ function init(highlightList, dcconList) {
 				}
 			}
 			
-			/* 구독자 아이콘을 등록 */
+			/* 구독콘을 등록 */
 			$.getJSON(
 				'https://twitchemotes.com/api_cache/v2/subscriber.json',
 				function(data2) {
@@ -73,8 +73,8 @@ function init(highlightList, dcconList) {
 	
 	/* 메세지의 강조 표현에 태그 추가 */
 	function highlightTagging(message) {
-	alert("1");
 		for (var i=0; i<highlightList.length; ++i) {
+		alert(highlightList[i] + ", " + message);
 			if (message.indexOf(highlightList[i]) != -1) {
 			alert(message);
 				message = '<span class="highlight">' + message + '</span>';
@@ -101,7 +101,7 @@ function init(highlightList, dcconList) {
 		return message;
 	}
 	
-	/* 트위치 감정표현을 이미지로 치환 */
+	/* 트위치 구독콘을 이미지로 치환 */
 	function replaceTwitchEmotes(message) {
 		if (message.match(/\n\S*?\n/g)) {
 			for (var emote_keyword in twitchEmotesMap) {
@@ -112,7 +112,7 @@ function init(highlightList, dcconList) {
 						var emote_url = twitchEmotesUrlTemplate.split(
 							'{image_id}').join(emote_id);
 						message = message.split(search_keyword).join(
-							'<img class="twitch_emote" src"' +
+							'<img class="twitch_emote" src="' +
 							emote_url + '" />');
 					}
 				}
