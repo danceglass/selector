@@ -27,7 +27,6 @@ function init(dcconList) {
 	var twitchEmotesUrlTemplate = "";
 	var twitchEmotesMap = {};
 	
-	addChatMessage("twitch", "맛물", "디씨콘 로딩");
 	/* url에서 받아온 각 디씨콘을 맵과 리스트에 등록 */
 	for (var i=0; i<dcconList.length; ++i) {
 		var dccon = dcconList[i];
@@ -40,8 +39,7 @@ function init(dcconList) {
 		}
 	}
 	
-	/* 트위치 기본 감정표현을 맵과 템플릿에 등록 */
-	addChatMessage("twitch", "맛물", "트위치 이모티콘 로딩");
+	/* 트위치 이모티콘을 맵과 템플릿에 등록 */
 	$.getJSON('https://twitchemotes.com/api_cache/v2/global.json',
 		function(data1) {
 			twitchEmotesUrlTemplate = data1.template.medium;
@@ -49,8 +47,6 @@ function init(dcconList) {
 				if(data1.emotes.hasOwnProperty(emote_keyword)) {
 					twitchEmotesMap[emote_keyword] =
 						data1.emotes[emote_keyword].image_id;
-						preloadImage(twitchEmotesUrlTemplate.split(
-							'{image_id}').join(data1.emotes[emote_keyword].image_id));
 				}
 			}
 			
@@ -94,7 +90,7 @@ function init(dcconList) {
 		return message;
 	}
 	
-	/* 트위치 구독콘을 이미지로 치환 */
+	/* 이모티콘과 구독콘을 이미지로 치환 */
 	function replaceTwitchEmotes(message) {
 		if (message.match(/\n\S*?\n/g)) {
 			for (var emote_keyword in twitchEmotesMap) {
