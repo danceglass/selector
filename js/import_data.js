@@ -75,7 +75,8 @@ function init(highlightList, dcconList) {
 	function highlightTagging(message) {
 		for (var i=0; i<highlightList.length; ++i) {
 			if (message.indexOf(highlightList[i]) != -1) {
-				message = '<span class="highlight">' + message + '</span>';
+				message = message.split(highlightList[i]).join(
+					'<span class="highlight">' + highlightList[i] + '</span>');
 			}
 		}
 		return message;
@@ -125,6 +126,7 @@ function init(highlightList, dcconList) {
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		
+		/* image_border를 상쇄시키기 위해 chat_text_message 안에 div를 하나 더 추가 */
 		msg = '<div class="chat_text_message_inner">' + msg + '</div>';
 		return msg;
 	};
