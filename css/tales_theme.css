@@ -14,9 +14,10 @@
 .chat_text_nickname,
 .chat_text_message	{	animation:ToLeft .5s ease forwards; }
 @keyframes Highlight
-{ 0%, 100%	{	opacity:1; }
-  25%, 75%	{	opacity:0.5; }
-  50%				{	opacity:1; mix-blend-mode:exclusion; } }
+{ 0%, 100%	{	hsv(0, 100%, 40%); }
+  25%				{	hsv(90, 100%, 40%); }
+  50%				{	hsv(179, 100%, 40%); }
+	75%				{ hsv(269, 100%, 40%); } }
 .highlight { animation:Highlight 2s linear infinite; }
 	
 	
