@@ -1,10 +1,10 @@
 {
 	"dccons":[
-		{"keywords":["ㅎㅎㅎㅎㅎㅎ"], "tags":["웃음", "케장콘"], "path":"https://puu.sh/sYEcl/cc46eb1ba1.png"},
-		{"keywords":["남탓"], "tags":["태그"], "path":"https://puu.sh/sYEoL/62c1948120.png"},
-		{"keywords":["말을잇지못하는", "말잇못"], "tags":["말잇못"], "path":"https://puu.sh/sYEu5/31115fabaa.png"},
-		{"keywords":["소닉말을잇지못하는", "소닉말잇못"], "tags":["말잇못", "소닉", "테일즈"], "path":"https://puu.sh/ukvw7/d08e313c0b.png"},
-		{"keywords":["말을잇지못하는테치", "말잇못테치"], "tags":["말잇못", "참피"], "path":"https://puu.sh/vPuHy/24c748de75.png"},
+		{"keywords":["ㅎㅎㅎㅎㅎㅎ"], "tags":["케장콘"], "path":"https://puu.sh/sYEcl/cc46eb1ba1.png"},
+		{"keywords":["남탓"], "tags":["케장콘"], "path":"https://puu.sh/sYEoL/62c1948120.png"},
+		{"keywords":["말을잇지못하는", "말잇못"], "tags":["케장콘", "말잇못"], "path":"https://puu.sh/sYEu5/31115fabaa.png"},
+		{"keywords":["소닉말을잇지못하는", "소닉말잇못"], "tags":["케장콘", "말잇못", "소닉", "테일즈"], "path":"https://puu.sh/ukvw7/d08e313c0b.png"},
+		{"keywords":["말을잇지못하는테치", "말잇못테치"], "tags":["케장콘", "말잇못", "참피"], "path":"https://puu.sh/vPuHy/24c748de75.png"},
 		{"keywords":["넹기분굿"], "tags":["케장콘"], "path":"https://puu.sh/sYEVT/9d16ff3968.png"},
 		{"keywords":["워메"], "tags":["케장콘"], "path":"https://puu.sh/sYF0d/2282ed541e.png"},
 		{"keywords":["머쓱"], "tags":["케장콘"], "path":"https://puu.sh/sYEYe/c5a611012b.png"},
@@ -100,7 +100,7 @@
 		{"keywords":["핫산쾅"], "tags":["핫산"], "path":"https://puu.sh/uiQ7Y/0ecf16e428.png"},
 		{"keywords":["저오빠이상해"], "tags":["카광"], "path":"https://puu.sh/uiRGC/6aac08a8d4.gif"},
 
-		{"keywords":["러브말을잇지못하는", "러브말잇못"], "tags":["케장콘", "움짤", "핑크"], "path":"https://puu.sh/ukvHg/dd367f87dd.gif"},
+		{"keywords":["러브말을잇지못하는", "러브말잇못"], "tags":["케장콘", "말잇못", "움짤", "핑크"], "path":"https://puu.sh/ukvHg/dd367f87dd.gif"},
 		{"keywords":["러브빳다죠"], "tags":["케장콘", "움짤", "핑크"], "path":"https://puu.sh/uiRSU/ef5b8e8f2d.gif"},
 		{"keywords":["당근빳다죠"], "tags":["케장콘"], "path":"https://puu.sh/uiSkS/e8681e538d.png"},
 		{"keywords":["골든빳다죠"], "tags":["케장콘", "움짤", "골드"], "path":"https://puu.sh/uUVuq/85e068b991.gif"},
@@ -424,7 +424,7 @@
 		{"keywords":["토드분노"], "tags":["베데스다"], "path":"http://funzinnu.com/stream/cdn/dccon/토드분노.png"},
 		{"keywords":["게이븐"], "tags":["스팀", "밸브"], "path":"http://funzinnu.com/stream/cdn/dccon/게이븐.png"},
 
-		{"keywords":["역자평가"], "tags":["주토피아", "피닉", "이그레인"], "path":"http://funzinnu.com/stream/cdn/dccon/역자평가.png"},
+		{"keywords":["역자평가", "역가평가", "이그레인평가"], "tags":["주토피아", "피닉", "역가"], "path":"http://funzinnu.com/stream/cdn/dccon/역자평가.png"},
 		{"keywords":["식자평가"], "tags":["주토피아", "닉"], "path":"http://funzinnu.com/stream/cdn/dccon/식자평가.png"},
 
 		{"keywords":["사이버망령"], "tags":["케장콘", "록맨", "고인"], "path":"http://funzinnu.com/stream/cdn/dccon/사이버망령.png"},
@@ -434,7 +434,7 @@
 		{"keywords":["양심지수"], "tags":["케장콘"], "path":"http://funzinnu.com/stream/cdn/dccon/양심지수.png"},
 		{"keywords":["좋은생각"], "tags":["케장콘"], "path":"http://funzinnu.com/stream/cdn/dccon/좋은생각.png"},
 
-		{"keywords":["4딸라"], "tags":["김두한","야인시대"], "path":"http://funzinnu.com/stream/cdn/dccon/사딸라.png"},
-		{"keywords":["오케이땡큐"], "tags":["김두한","야인시대"], "path":"http://funzinnu.com/stream/cdn/dccon/오케이땡큐.png"}
+		{"keywords":["4딸라"], "tags":["김두한", "야인시대"], "path":"http://funzinnu.com/stream/cdn/dccon/사딸라.png"},
+		{"keywords":["오케이땡큐"], "tags":["김두한", "야인시대"], "path":"http://funzinnu.com/stream/cdn/dccon/오케이땡큐.png"}
 	]
 }
