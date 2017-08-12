@@ -13,12 +13,12 @@
 	to	{ transform:none; } }
 .chat_text_nickname,
 .chat_text_message	{	animation:ToLeft .5s ease forwards; }
-@keyframes Highlight
+/*@keyframes Highlight
 { 0%, 100%	{	color:hsl(0, 100%, 40%); }
   25%				{	color:hsl(90, 100%, 40%); }
   50%				{	color:hsl(179, 100%, 40%); }
 	75%				{ color:hsl(269, 100%, 40%); } }
-.highlight { animation:Highlight 2s linear infinite; }
+.highlight { animation:Highlight 2s linear infinite; }*/
 	
 	
 /* 채팅 범위가 범위에 가득 차도록 */
