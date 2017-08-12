@@ -129,8 +129,6 @@ function init(dcconList) {
 		jQuery.fn.text = originalJqueryText;
 		return result;
 	};
-	
-	addChatMessage("twitch", "맛물", "이미지 로딩이 완료되었습니다.");
 }
 		
 $(document).ready(function() {
@@ -157,6 +155,8 @@ $(document).ready(function() {
 	}
 	$('head').append(
 		'<link rel="stylesheet" href="' + customCssUrl + '" />');
+		
+	addChatMessage("twitch", "맛물", "디씨콘과 CSS 로딩이 완료되었습니다.");
 });
 
 /* JSAssist의 connect_jsassist를 재구현 */
