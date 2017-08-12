@@ -14,7 +14,7 @@ function getUrlParameter(sParam) {
 };
 
 
-function init(highlightList, dcconList) {
+function init(dcconList) {
 /* url에서 리스트를 받고 각 함수 선언 */
 
 	var dcconSearchMap = {};		// keyword로 dccon을 검색하기 위한 맵
@@ -64,23 +64,7 @@ function init(highlightList, dcconList) {
 	dcconKeywordList.sort(function(a,b) {
 		return a.length < b.length;
 	});
-	
-	/* 하이라이트 리스트 정렬 */	
-	highlightList.sort(function(a,b) {
-		return a.length < b.length;
-	});
-	
-	
-	/* 메세지의 강조 표현에 태그 추가 */
-	/*function highlightTagging(message) {
-		for (var i=0; i<highlightList.length; ++i) {
-			if (message.indexOf(highlightList[i]) != -1) {
-				message = message.split(highlightList[i]).join(
-					'<span class="highlight">' + highlightList[i] + '</span>');
-			}
-		}
-		return message;
-	}*/
+
 
 	/* 메세지의 디씨콘을 이미지로 치환 */
 	function replaceDccon(message) {
@@ -122,7 +106,6 @@ function init(highlightList, dcconList) {
 	originalJqueryText = jQuery.fn.text;
 	function hackedJqueryText() {
 		var msg = originalJqueryText.apply(this, arguments);
-		/*msg = highlightTagging(msg);*/
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		
@@ -139,40 +122,24 @@ function init(highlightList, dcconList) {
 		jQuery.fn.text = originalJqueryText;
 		return result;
 	};
-}
-
-$(document).ready(function() {
-	/* 하이라이트 json 경로 받아오기 */
-	var highlightListUrl = getUrlParameter('highlight');
-	if (highlightListUrl == undefined) {
-		highlightListUrl = 'https://krynen.github.io/jsassist-custom-css/js/highlight_list.json';
-	}
-	$.getJSON(highlightListUrl).done(function(data1) {
-		var highlightList = data1.highlights;
 	
-		/* 디씨콘 json 경로 받아오기 */
-		var dcconListUrl = getUrlParameter('dccon_list');
-		if (dcconListUrl == undefined) {
-			dcconListUrl = 'https://krynen.github.io/jsassist-custom-css/js/dccon_list.json';
-		}
-		$.getJSON(dcconListUrl).done(function(data2) {
-			/* 경로의 json파일을 읽고 init(); */
-			var dcconList = data2.dccons;
-			init(highlightList, dcconList);
-		}).fail(
-			function(jqxhr, textStatus, error) {
-				var err = textStatus + ", " + error;
-				console.log("Request Failed: " + err);
-				init(highlightList, dcconList);
-			});
-			
+		
+$(document).ready(function() {
+	/* 디씨콘 json 경로 받아오기 */
+	var dcconListUrl = getUrlParameter('dccon_list');
+	if (dcconListUrl == undefined) {
+		dcconListUrl = 'https://krynen.github.io/jsassist-custom-css/js/dccon_list.json';
+	}
+	$.getJSON(dcconListUrl).done(function(data2) {
+		/* 경로의 json파일을 읽고 init(); */
+		var dcconList = data2.dccons;
+		init(dcconList);
 	}).fail(
 		function(jqxhr, textStatus, error) {
 			var err = textStatus + ", " + error;
-			console.log("request Failed: " + err);
-			highlightInit(highlightList);
-		});
-		
+			console.log("Request Failed: " + err);
+			init(dcconList);
+		});	
 	
 	/* css 경로 받아오기 */
 	var customCssUrl = getUrlParameter('custom_css');
