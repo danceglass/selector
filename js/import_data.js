@@ -72,7 +72,7 @@ function init(highlightList, dcconList) {
 	
 	
 	/* 메세지의 강조 표현에 태그 추가 */
-	function highlightTagging(message) {
+	/*function highlightTagging(message) {
 		for (var i=0; i<highlightList.length; ++i) {
 			if (message.indexOf(highlightList[i]) != -1) {
 				message = message.split(highlightList[i]).join(
@@ -80,7 +80,7 @@ function init(highlightList, dcconList) {
 			}
 		}
 		return message;
-	}
+	}*/
 
 	/* 메세지의 디씨콘을 이미지로 치환 */
 	function replaceDccon(message) {
@@ -122,7 +122,7 @@ function init(highlightList, dcconList) {
 	originalJqueryText = jQuery.fn.text;
 	function hackedJqueryText() {
 		var msg = originalJqueryText.apply(this, arguments);
-		msg = highlightTagging(msg);
+		/*msg = highlightTagging(msg);*/
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		
