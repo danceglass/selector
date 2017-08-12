@@ -51,7 +51,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											border-style:solid; box-sizing:border-box;
 											position:relative; z-index:0; overflow:visible; }
 .chat_text_message_inner
-										{	margin-top:-25px; overflow:hidden;
+										{	margin:-25px -25px 0 0; overflow:hidden;
 											max-height:calc(181px - 87px - 10px + 30px); padding:2px;
 /* message_h - message_v_border - message_v_padding + inner_margin_top */ }
 
