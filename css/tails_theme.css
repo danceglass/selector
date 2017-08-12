@@ -63,7 +63,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 
 /* 폰트 설정 */
 html								{	font-family:'Jeju Gothic', serif !important;
-											font-size:16px !important; }
+											font-size:20px !important; }
 .chat_text_nickname	{	font-size:0.9em !important; }
 .chat_text_message	{	font-family:inherit !important;
 											font-size:1em !important;
