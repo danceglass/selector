@@ -13,10 +13,12 @@ function getUrlParameter(sParam) {
 	}
 };
 var preloadImage = function(url) {
+	var img;
 	try {
-		var img = new Image();
+		img = new Image();
 		img.src = url;
 	} catch(e) {}
+	return img;
 }
 
 function init(dcconList) {
@@ -156,8 +158,10 @@ $(document).ready(function() {
 	$('head').append(
 		'<link rel="stylesheet" href="' + customCssUrl + '" />');
 		
-		alert("test");
-	return addChatMessage("twitch", "맛물", "디씨콘과 CSS 로딩이 완료되었습니다.");
+	preloadImage("https://static-cdn.jtvnw.net/jtv_user_pictures/yeokka-profile_image-9c2f528d03e22a7f-70x70.jpeg").
+		onload = function() {
+			addChatMessage("twitch", "맛물", "디씨콘과 CSS 로딩이 완료되었습니다.");
+		};
 });
 
 /* JSAssist의 connect_jsassist를 재구현 */
