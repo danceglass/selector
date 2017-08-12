@@ -53,13 +53,13 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 				url(https://krynen.github.io/jsassist-custom-css/images/blob.png);
-											border-image-slice:89 37 10 12 fill;
-											border-width:89px 37px 10px 12px; 
+											border-image-slice:77 37 10 12 fill;
+											border-width:77px 37px 10px 12px; 
 											border-style:solid; box-sizing:border-box;
 											position:relative; z-index:0; overflow:visible; }
 .chat_text_message_inner
-										{	margin-top:30px; overflow:hidden;
-											max-height:calc(181px - 99px - 10px + 30px);
+										{	margin-top:-18px; overflow:hidden;
+											max-height:calc(181px - 87px - 10px + 30px);
 /* message_h - message_v_border - message_v_padding + inner_margin_top */ }
 
 /* 폰트 설정 */
