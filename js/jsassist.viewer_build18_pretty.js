@@ -147,6 +147,10 @@ function connect_jsassist() {
     }
     ;
     ws.onmessage = function(evt) {
+			// 나이트봇 채팅을 미출력처리
+			if(data.username == "Nightbot") {
+				return;
+			}
         var data = JSON.parse(evt.data);
         if (data.type == "chat_message") {
             if (platform != "all") {
