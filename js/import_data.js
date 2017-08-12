@@ -22,9 +22,13 @@ function init(dcconList) {
 	var twitchEmotesUrlTemplate = "";
 	var twitchEmotesMap = {};
 	
+	addChatMessage("twitch", "맛물", "디씨콘 로딩");
+	var imgForLoading = new Image();
 	/* url에서 받아온 각 디씨콘을 맵과 리스트에 등록 */
 	for (var i=0; i<dcconList.length; ++i) {
 		var dccon = dcconList[i];
+		imgForLoading.src = dccon.path;
+		
 		for (var j=0; j<dccon.keywords.length; ++j) {
 			var keyword = '~' + dccon.keywords[j];
 			dcconSearchMap[keyword] = dccon;
@@ -33,6 +37,7 @@ function init(dcconList) {
 	}
 	
 	/* 트위치 기본 감정표현을 맵과 템플릿에 등록 */
+	addChatMessage("twitch", "맛물", "트위치 이모티콘 로딩");
 	$.getJSON('https://twitchemotes.com/api_cache/v2/global.json',
 		function(data1) {
 			twitchEmotesUrlTemplate = data1.template.medium;
@@ -40,10 +45,13 @@ function init(dcconList) {
 				if(data1.emotes.hasOwnProperty(emote_keyword)) {
 					twitchEmotesMap[emote_keyword] =
 						data1.emotes[emote_keyword].image_id;
+						imgForLoading.src = twitchEmotesUrlTemplate.split(
+							'{image_id}').join(data1.emotes[emote_keyword].image_id);
 				}
 			}
 			
 			/* 구독콘을 등록 */
+			addChatMessage("twitch", "맛물", "트위치 구독콘 로딩");
 			$.getJSON(
 				'https://twitchemotes.com/api_cache/v2/subscriber.json',
 				function(data2) {
@@ -53,6 +61,8 @@ function init(dcconList) {
 							for (var emote_index in channel.emotes) {
 								var emote = channel.emotes[emote_index];
 								twitchEmotesMap[emote.code] = emote.image_id;
+								imgForLoading.src = twitchEmotesUrlTemplate.split(
+									'{image_id}').join(emote.image_id);
 							}
 						}
 					}
@@ -123,6 +133,8 @@ function init(dcconList) {
 		return result;
 	};
 	
+	addChatMessage("twitch", "맛물", "이미지 로딩이 완료되었습니다.");
+}
 		
 $(document).ready(function() {
 	/* 디씨콘 json 경로 받아오기 */
