@@ -156,6 +156,7 @@ $(document).ready(function() {
 	$('head').append(
 		'<link rel="stylesheet" href="' + customCssUrl + '" />');
 		
+		alert("test");
 	return addChatMessage("twitch", "맛물", "디씨콘과 CSS 로딩이 완료되었습니다.");
 });
 
