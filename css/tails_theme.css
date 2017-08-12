@@ -43,11 +43,6 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 
 
 /* 배경 그래픽 지정 */
-.chat_text_nickname	{	position:relative; z-index:1;
-											background-image:linear-gradient(
-												                  250deg,    transparent  15px,
-												rgba(192,80,12,0.8) 30px, rgb(192,80,12)  40px,
-												     rgb(192,80,12) 70px,    transparent 150px); }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 				url(https://krynen.github.io/jsassist-custom-css/images/blob.png);
@@ -63,15 +58,15 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 /* 폰트 설정 */
 html								{	font-family:'Jeju Gothic', serif !important;
 											font-size:20px !important; }
-.chat_text_nickname	{	font-size:0.9em !important; }
-.chat_text_message	{	font-family:inherit !important;
-											font-size:1em !important;
-											color: white !important;
+.chat_text_nickname,
+.chat_text_message	{	font-family:inherit !important; color: white !important;
 											text-shadow:
 												-1px -1px 1px rgb(192,80,12), -1px   0 1px rgb(192,80,12),
 												-1px  1px 1px rgb(192,80,12),    0 1px 1px rgb(192,80,12),
 												 1px  1px 1px rgb(192,80,12),  1px   0 1px rgb(192,80,12),
 												 1px -1px 1px rgb(192,80,12),   0 -1px 1px rgb(192,80,12); }
+.chat_text_nickname	{	font-size:0.9em !important; }
+.chat_text_message	{	font-size:1em !important; }
 											
 											
 /* 플랫폼 표기 제거 */
