@@ -147,13 +147,15 @@ function connect_jsassist() {
     }
     ;
     ws.onmessage = function(evt) {
-				// 나이트봇 채팅을 미출력처리
-				alert('"'+data.username+'"');
-				if(data.username == "Nightbot") {
-						return;
-				}
-			
         var data = JSON.parse(evt.data);
+				
+				
+        // 나이트봇 채팅을 미출력처리
+        alert('"'+data.username+'"');
+        if(data.username == "Nightbot") {
+            return;
+        }
+				
         if (data.type == "chat_message") {
             if (platform != "all") {
                 if (platform != data.platform) {
