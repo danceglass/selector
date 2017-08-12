@@ -33,11 +33,11 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 
 /* 채팅 위치 설정 */
 .chat_text_nickname	{	display:block; width:calc(100% - 10px);
-											margin:20px 0 0; padding:5px 40px 5px 5px;
+											margin:35px 0 0; padding:5px 40px 5px 5px;
 											box-sizing:border-box; text-align:right; }
 .chat_text_message	{	height:auto; max-height:160px;
-											margin-top:calc(-1em - 25px);
-											padding:5px; }
+											margin-top:calc(-1em - 40px);
+											padding:30px 5px 5px; }
 
 
 
@@ -51,8 +51,8 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 				url(https://krynen.github.io/jsassist-custom-css/images/blob.png);
-											border-image-slice:35 39 11 25 fill;
-											border-width:35px 39px 11px 25px; 
+											border-image-slice:45 39 11 25 fill;
+											border-width:45px 39px 11px 25px; 
 											border-style:solid; box-sizing:border-box;
 											position:relative; z-index:0; overflow:hidden; }
 
