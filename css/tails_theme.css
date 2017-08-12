@@ -38,7 +38,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											margin:30px 0 0; padding:5px 40px 5px 5px;
 											box-sizing:border-box; text-align:right; }
 .chat_text_message	{	height:auto; max-height:181px;
-											margin-top:calc(-1em - 40px);
+											margin-top:calc(-1em - 33px);
 											padding:5px; }
 
 
@@ -57,7 +57,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											border-style:solid; box-sizing:border-box;
 											position:relative; z-index:0; overflow:visible; }
 .chat_text_message_inner
-										{	margin-top:-18px; overflow:hidden;
+										{	margin-top:-25px; overflow:hidden;
 											max-height:calc(181px - 87px - 10px + 30px);
 /* message_h - message_v_border - message_v_padding + inner_margin_top */ }
 
