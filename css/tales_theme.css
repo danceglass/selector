@@ -17,7 +17,7 @@
 { 0%, 100%	{	opacity:1; }
   25%, 75%	{	opacity:0.5; }
   50%				{	opacity:1; mix-blend-mode:exclusion; } }
-.highlight { animation:blinkAni 2s linear infinite; }
+.highlight { animation:Highlight 2s linear infinite; }
 	
 	
 /* 채팅 범위가 범위에 가득 차도록 */
