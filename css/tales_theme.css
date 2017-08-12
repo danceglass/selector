@@ -57,8 +57,17 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 											position:relative; z-index:0; overflow:hidden; }
 
 /* 폰트 설정 */
+html								{	font-family:'Jeju Gothic', serif !important;
+											font-size:16px !important; }
 .chat_text_nickname	{	font-size:0.9em !important; }
 .chat_text_message	{	font-family:inherit !important;
 											font-size:1em !important;
 											color:rgb(192,80,12) !important;
 											text-shadow:0 -1px 1px rgba(0,0,0,0.8); }
+											
+											
+/* 플랫폼 표기 제거 */
+.chat_platform_twitch,
+.chat_platform_youtube,
+.chat_platform_tvpot,
+.chat_platform_none			{	display:none; }
