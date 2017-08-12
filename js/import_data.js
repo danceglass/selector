@@ -12,7 +12,12 @@ function getUrlParameter(sParam) {
 		}
 	}
 };
-
+var preloadImage = function(url) {
+	try {
+		var img = new Image();
+		img.src = url;
+	} catch(e) {}
+}
 
 function init(dcconList) {
 /* url에서 리스트를 받고 각 함수 선언 */
@@ -23,11 +28,10 @@ function init(dcconList) {
 	var twitchEmotesMap = {};
 	
 	addChatMessage("twitch", "맛물", "디씨콘 로딩");
-	var imgForLoading = new Image();
 	/* url에서 받아온 각 디씨콘을 맵과 리스트에 등록 */
 	for (var i=0; i<dcconList.length; ++i) {
 		var dccon = dcconList[i];
-		imgForLoading.src = dccon.path;
+		preloadImage(dccon.path);
 		
 		for (var j=0; j<dccon.keywords.length; ++j) {
 			var keyword = '~' + dccon.keywords[j];
@@ -45,8 +49,8 @@ function init(dcconList) {
 				if(data1.emotes.hasOwnProperty(emote_keyword)) {
 					twitchEmotesMap[emote_keyword] =
 						data1.emotes[emote_keyword].image_id;
-						imgForLoading.src = twitchEmotesUrlTemplate.split(
-							'{image_id}').join(data1.emotes[emote_keyword].image_id);
+						preloadImage(twitchEmotesUrlTemplate.split(
+							'{image_id}').join(data1.emotes[emote_keyword].image_id));
 				}
 			}
 			
@@ -61,8 +65,8 @@ function init(dcconList) {
 							for (var emote_index in channel.emotes) {
 								var emote = channel.emotes[emote_index];
 								twitchEmotesMap[emote.code] = emote.image_id;
-								imgForLoading.src = twitchEmotesUrlTemplate.split(
-									'{image_id}').join(emote.image_id);
+								preloadImage(twitchEmotesUrlTemplate.split(
+									'{image_id}').join(emote.image_id));
 							}
 						}
 					}
