@@ -124,6 +124,8 @@ function init(highlightList, dcconList) {
 		msg = highlightTagging(msg);
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
+		
+		msg = '<div class="chat_text_message_inner">' + msg + '</div>';
 		return msg;
 	};
 	
