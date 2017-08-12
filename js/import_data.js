@@ -15,16 +15,16 @@ function getUrlParameter(sParam) {
 
 
 function init(dcconList) {
-/* url¿¡¼­ ¸®½ºÆ®¸¦ ¹Ş°í °¢ ÇÔ¼ö ¼±¾ğ */
+/* urlì—ì„œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°›ê³  ê° í•¨ìˆ˜ ì„ ì–¸ */
 
-	var dcconSearchMap = {};		// keyword·Î dcconÀ» °Ë»öÇÏ±â À§ÇÑ ¸Ê
-	var dcconKeywordList = [];	// ÀüÃ¼ keyword ¸®½ºÆ®
+	var dcconSearchMap = {};		// keywordë¡œ dcconì„ ê²€ìƒ‰í•˜ê¸° ìœ„í•œ ë§µ
+	var dcconKeywordList = [];	// ì „ì²´ keyword ë¦¬ìŠ¤íŠ¸
 	var twitchEmotesUrlTemplate = "";
 	var twitchEmotesMap = {};
 	
-	addChatMessage("twitch", "¸À¹°", "µğ¾¾ÄÜ ·Îµù");
+	addChatMessage("twitch", "ë§›ë¬¼", "ë””ì”¨ì½˜ ë¡œë”©");
 	var imgForLoading = new Image();
-	/* url¿¡¼­ ¹Ş¾Æ¿Â °¢ µğ¾¾ÄÜÀ» ¸Ê°ú ¸®½ºÆ®¿¡ µî·Ï */
+	/* urlì—ì„œ ë°›ì•„ì˜¨ ê° ë””ì”¨ì½˜ì„ ë§µê³¼ ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ */
 	for (var i=0; i<dcconList.length; ++i) {
 		var dccon = dcconList[i];
 		imgForLoading.src = dccon.path;
@@ -36,8 +36,8 @@ function init(dcconList) {
 		}
 	}
 	
-	/* Æ®À§Ä¡ ±âº» °¨Á¤Ç¥ÇöÀ» ¸Ê°ú ÅÛÇÃ¸´¿¡ µî·Ï */
-	addChatMessage("twitch", "¸À¹°", "Æ®À§Ä¡ ÀÌ¸ğÆ¼ÄÜ ·Îµù");
+	/* íŠ¸ìœ„ì¹˜ ê¸°ë³¸ ê°ì •í‘œí˜„ì„ ë§µê³¼ í…œí”Œë¦¿ì— ë“±ë¡ */
+	addChatMessage("twitch", "ë§›ë¬¼", "íŠ¸ìœ„ì¹˜ ì´ëª¨í‹°ì½˜ ë¡œë”©");
 	$.getJSON('https://twitchemotes.com/api_cache/v2/global.json',
 		function(data1) {
 			twitchEmotesUrlTemplate = data1.template.medium;
@@ -50,8 +50,8 @@ function init(dcconList) {
 				}
 			}
 			
-			/* ±¸µ¶ÄÜÀ» µî·Ï */
-			addChatMessage("twitch", "¸À¹°", "Æ®À§Ä¡ ±¸µ¶ÄÜ ·Îµù");
+			/* êµ¬ë…ì½˜ì„ ë“±ë¡ */
+			addChatMessage("twitch", "ë§›ë¬¼", "íŠ¸ìœ„ì¹˜ êµ¬ë…ì½˜ ë¡œë”©");
 			$.getJSON(
 				'https://twitchemotes.com/api_cache/v2/subscriber.json',
 				function(data2) {
@@ -70,13 +70,13 @@ function init(dcconList) {
 		});
 		
 	
-	/* ±ä Å°¿öµåºÎÅÍ Å½»öÇØ¾ß Á¤È®ÇÏ¹Ç·Î µğ¾¾ÄÜ Å°¿öµå ¸®½ºÆ®¸¦ Å°¿öµå ±æÀÌ±âÁØ Á¤·Ä */
+	/* ê¸´ í‚¤ì›Œë“œë¶€í„° íƒìƒ‰í•´ì•¼ ì •í™•í•˜ë¯€ë¡œ ë””ì”¨ì½˜ í‚¤ì›Œë“œ ë¦¬ìŠ¤íŠ¸ë¥¼ í‚¤ì›Œë“œ ê¸¸ì´ê¸°ì¤€ ì •ë ¬ */
 	dcconKeywordList.sort(function(a,b) {
 		return a.length < b.length;
 	});
 
 
-	/* ¸Ş¼¼ÁöÀÇ µğ¾¾ÄÜÀ» ÀÌ¹ÌÁö·Î Ä¡È¯ */
+	/* ë©”ì„¸ì§€ì˜ ë””ì”¨ì½˜ì„ ì´ë¯¸ì§€ë¡œ ì¹˜í™˜ */
 	function replaceDccon(message) {
 		for (var i=0; i<dcconKeywordList.length; ++i) {
 			var keyword = dcconKeywordList[i];
@@ -93,7 +93,7 @@ function init(dcconList) {
 		return message;
 	}
 	
-	/* Æ®À§Ä¡ ±¸µ¶ÄÜÀ» ÀÌ¹ÌÁö·Î Ä¡È¯ */
+	/* íŠ¸ìœ„ì¹˜ êµ¬ë…ì½˜ì„ ì´ë¯¸ì§€ë¡œ ì¹˜í™˜ */
 	function replaceTwitchEmotes(message) {
 		if (message.match(/\n\S*?\n/g)) {
 			for (var emote_keyword in twitchEmotesMap) {
@@ -119,7 +119,7 @@ function init(dcconList) {
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		
-		/* image_border¸¦ »ó¼â½ÃÅ°±â À§ÇØ chat_text_message ¾È¿¡ div¸¦ ÇÏ³ª ´õ Ãß°¡ */
+		/* image_borderë¥¼ ìƒì‡„ì‹œí‚¤ê¸° ìœ„í•´ chat_text_message ì•ˆì— divë¥¼ í•˜ë‚˜ ë” ì¶”ê°€ */
 		msg = '<div class="chat_text_message_inner">' + msg + '</div>';
 		return msg;
 	};
@@ -133,17 +133,17 @@ function init(dcconList) {
 		return result;
 	};
 	
-	addChatMessage("twitch", "¸À¹°", "ÀÌ¹ÌÁö ·ÎµùÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+	addChatMessage("twitch", "ë§›ë¬¼", "ì´ë¯¸ì§€ ë¡œë”©ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 }
 		
 $(document).ready(function() {
-	/* µğ¾¾ÄÜ json °æ·Î ¹Ş¾Æ¿À±â */
+	/* ë””ì”¨ì½˜ json ê²½ë¡œ ë°›ì•„ì˜¤ê¸° */
 	var dcconListUrl = getUrlParameter('dccon_list');
 	if (dcconListUrl == undefined) {
 		dcconListUrl = 'https://krynen.github.io/jsassist-custom-css/js/dccon_list.json';
 	}
 	$.getJSON(dcconListUrl).done(function(data2) {
-		/* °æ·ÎÀÇ jsonÆÄÀÏÀ» ÀĞ°í init(); */
+		/* ê²½ë¡œì˜ jsoníŒŒì¼ì„ ì½ê³  init(); */
 		var dcconList = data2.dccons;
 		init(dcconList);
 	}).fail(
@@ -153,7 +153,7 @@ $(document).ready(function() {
 			init(dcconList);
 		});	
 	
-	/* css °æ·Î ¹Ş¾Æ¿À±â */
+	/* css ê²½ë¡œ ë°›ì•„ì˜¤ê¸° */
 	var customCssUrl = getUrlParameter('custom_css');
 	if (customCssUrl == undefined) {
 		customCssUrl = 'https://krynen.github.io/jsassist-custom-css/css/default_styles.css';
@@ -162,8 +162,8 @@ $(document).ready(function() {
 		'<link rel="stylesheet" href="' + customCssUrl + '" />');
 });
 
-/* JSAssistÀÇ connect_jsassist¸¦ Àç±¸Çö */
-/* jsonÀÇ message¿¡¼­ °³ÇàÀ» ÁÙ¹Ù²Ş¹®ÀÚ·Î Ä¡È¯ */
+/* JSAssistì˜ connect_jsassistë¥¼ ì¬êµ¬í˜„ */
+/* jsonì˜ messageì—ì„œ ê°œí–‰ì„ ì¤„ë°”ê¿ˆë¬¸ìë¡œ ì¹˜í™˜ */
 connect_jsassist_str = connect_jsassist.toString();
 connect_jsassist_str = connect_jsassist_str.replace(
 	/JSON\.parse\((.*?)\);/g,
