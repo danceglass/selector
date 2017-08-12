@@ -46,10 +46,9 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 /* 배경 그래픽 지정 */
 .chat_text_nickname	{	position:relative; z-index:1;
 											background-image:linear-gradient(
-												70deg,
-												transparent calc(100% - 150px),
-												rgb(192,80,12) calc(100% - 60px),
-												transparent calc(100% - 30px)); }
+												                  250deg,    transparent  15px,
+												rgba(192,80,12,0.8) 30px, rgb(192,80,12)  40px,
+												     rgb(192,80,12) 70px,    transparent 150px); }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 				url(https://krynen.github.io/jsassist-custom-css/images/blob.png);
