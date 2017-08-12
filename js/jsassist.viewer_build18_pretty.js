@@ -148,6 +148,7 @@ function connect_jsassist() {
     ;
     ws.onmessage = function(evt) {
 				// 나이트봇 채팅을 미출력처리
+				alert('"'+data.username+'"');
 				if(data.username == "Nightbot") {
 						return;
 				}
