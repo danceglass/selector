@@ -1,1 +1,192 @@
-eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("var urlParams;(window.onpopstate=function(){var match,pl=/\\+/g,search=/([^&=]+)=?([^&]*)/g,decod` V's){return ` 4\"URIComponent(s.replace(pl,\" \"));},query=`!M#location.`!.\".substring(1);`!z%={};while((`!f!=` G#exec(` k!))){` F%[`!E\"` F\"[1])]=` %)2]);}})();`!$ randInt(min,max`\",%Math.floor(` &!random()*(max-min))+min;}var chat_count=0;` #*_max=5` 0\"$` 2!first_element` D&fade` )!preset_name`!]&fillSetting`\"F!(){` M%=get` /\"\"` +%\",10);` `'` :'` 0\"\",\"default\");}`! %has` A\"name){if(`#T&name]==undefined`#$%false;}` '#true` g'`!0%name,def`&U\"value=` n+;if(` 3\"` s/def` {%` @!`#w\"platformIcon`#;\"` *#` (!anim`&D!`#a%F`#a$fo`#y#fontUsernameSiz` 4&` -$Color` -%Chat` :)Chat` 9&background` M&` *&Alpha`!C%B` 9/` **` J\"`#D%setConfig(c` \"!`$=!`$|'!=` 2\".` .\"N`$`!`#.\";}`\"~(` ?%`#2(` %$` -,;`#=%` 2$`#M&`#K$` 2$`#Z%font` -$`#f!`#W,` 1(`#r)`#j-` 60`#+\"`$$(` :(`$;%`$3)` 2,` ^\"`$B+` =$`$X,`$U+` 5.` 2!*0.01`\"p!`$m+`\"t(`%',`% /` 92` x'if(`)c%`*M')`*s\"`$,\"`+O%}updateStyle(`*C(` +){$(\"`!,!_text_nickname\").css({'font-family':font});` E*messag` &H` o2size` K\"`%M(` =<\"color\",\"rgb(\"+`%]-+\")\"`!MA`!5&`& $`\"+;`!'/`&7%`!-%body` H$`%l&` O\"a(\"+`&B++\",` ((`%6!`!`>` o'-`!J'a(\"+`&G/` !`&0/`!\"\"}$(document).ready(`%q$`18$`2M$connect_jsassist();`1a.;}`3n'addChatM`!x\"(`+c$,`$l$,`\"1#`0H\"style=\"s` \"!'display:none; '\"`-s!` 7!P`,Z$`(-\"` n$_\";if` {%Icon){` C)+=`-#%}else` .,\"none\"`1+\"chatN`!_#=\"<span class='\"+` J*\"` *$+\"/>` =)`'3.'`\">#`\"1)'>\"+` 9$+\"</span>`\"J\"msg=$(\"<div>\"+`#'#+\"</` ,!).text()`0j%`#b#=` L!`!4.` Y#`!,5msg` s%` o!$chatElement=$(`\"i(`&-!`!)#);` =(.appendTo(`';%container\"));`,9*if(`1/&`#|#){` c)show()`$M#` (.` V%,{easing:\"easeOutQuint\",dire`&k!:\"down\"});}`'O&++;if`\"6!Fade!=0`&g\"fadeTim`.;\"Fade*1000`!K@delay(` X$).hide(0).promise().done`(z($(this).remove()`0G!`!X\"--;}`\"F1` q1`\"a&100` T[`!.\"`\"t#` 4\">` ;&_max`*s(--;$` f\"_temp=`%). span:first-child\")` F).n`'G!`!H&` d(.n`'d!` &3` -%}}}is_`,A#ed=false;is_init_oldver` .#`,;%`,d.`%;!ws=new WebSocket(\"ws://localhost:4649/JSA` P!`0^!erver\");ws.onopen=`#f'`!K)true;}` C\"`)N#` B&evt`!=\"data=JSON.parse(evt.data`(P!data.type=`-@#`0:%{`-;'!=\"all` $,` W!` '$){return;}}`/ +` :),` )!u`3d#` (\"`/6$`&z\" `!F,onfig\"){setC` '!` :!`'F$` @*undefined`!f!`$C+`$M\"){`/P(`#>\"` *$`\"A\";`)Q&\"fade\"`'Q!Fad`* \"_fade;font=\"Jeju Gothic\"` .!U`\"3#Size=14` ')`3B!=\"255, 255, 255` P\"`%3!` M!6` '%` 82`4I&` X2` 6&`48!=0`!w!`4\\+` E-` 6*` S#.25`'d,`&K\"`$FV}`'&#clos`' '`'H+`(t\"setTimeout(`(l,`,1\";};}"))
+var urlParams;
+(window.onpopstate = function() {
+    var match, pl = /\+/g, search = /([^&=]+)=?([^&]*)/g, decode = function(s) {
+        return decodeURIComponent(s.replace(pl, " "));
+    }, query = window.location.search.substring(1);
+    urlParams = {};
+    while ((match = search.exec(query)) ) {
+        urlParams[decode(match[1])] = decode(match[2]);
+    }
+}
+)();
+function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+var chat_count = 0;
+var chat_count_max = 50;
+var $chat_first_element;
+var chat_fade;
+var preset_name;
+function fillSettingParam() {
+    chat_fade = getParam("chat_fade", 10);
+    preset_name = getParam("preset", "default");
+}
+function hasParam(name) {
+    if (urlParams[name] == undefined) {
+        return false;
+    }
+    return true;
+}
+function getParam(name, def) {
+    var value = urlParams[name];
+    if (value == undefined) {
+        return def;
+    }
+    return value;
+}
+var platformIcon;
+var platform;
+var animation;
+var chatFade;
+var font;
+var fontUsernameSize;
+var fontUsernameColor;
+var fontChatSize;
+var fontChatColor;
+var backgroundColor;
+var backgroundAlpha;
+var chatBackgroundColor;
+var chatBackgroundAlpha;
+function setConfig(config) {
+    if (preset_name != config.presetName) {
+        return;
+    }
+    platformIcon = config.platformIcon;
+    platform = config.platform;
+    animation = config.animation;
+    chatFade = config.chatFade;
+    font = config.font;
+    fontUsernameSize = config.fontUsernameSize;
+    fontUsernameColor = config.fontUsernameColor;
+    fontChatSize = config.fontChatSize;
+    fontChatColor = config.fontChatColor;
+    backgroundColor = config.backgroundColor;
+    backgroundAlpha = config.backgroundAlpha * 0.01;
+    chatBackgroundColor = config.chatBackgroundColor;
+    chatBackgroundAlpha = config.chatBackgroundAlpha * 0.01;
+    if (hasParam("chat_fade")) {
+        chatFade = chat_fade;
+    }
+    updateStyle();
+}
+function updateStyle() {
+    $(".chat_text_nickname").css({
+        'font-family': font
+    });
+    $(".chat_text_message").css({
+        'font-family': font
+    });
+    $(".chat_text_nickname").css({
+        'font-size': fontUsernameSize
+    });
+    $(".chat_text_nickname").css("color", "rgb(" + fontUsernameColor + ")");
+    $(".chat_text_message").css({
+        'font-size': fontChatSize
+    });
+    $(".chat_text_message").css("color", "rgb(" + fontChatColor + ")");
+    $("body").css("background", "rgba(" + backgroundColor + "," + backgroundAlpha + ")");
+    $(".chat_text_message").css("background-color", "rgba(" + chatBackgroundColor + "," + chatBackgroundAlpha + ")");
+}
+$(document).ready(function() {
+    chat_count = 0;
+    connect_jsassist();
+    fillSettingParam();
+});
+function addChatMessage(platform, nickname, message) {
+    var style = "style='display:none; '";
+    var stylePlatform = "chat_platform_";
+    if (platformIcon) {
+        stylePlatform += platform;
+    } else {
+        stylePlatform += "none";
+    }
+    var chatNickname = "<span class='" + stylePlatform + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";
+    var msg = $("<div>" + message + "</div>").text();
+    var chatMessage = "<div class='chat_text_message' style='display:none'>" + msg + "</div>";
+    var $chatElement = $(chatNickname + chatMessage);
+    $chatElement.appendTo($(".chat_container"));
+    updateStyle();
+    if (animation == "none") {
+        $chatElement.show();
+    } else {
+        $chatElement.show(animation, {
+            easing: "easeOutQuint",
+            direction: "down"
+        });
+    }
+    chat_count++;
+    if (chatFade != 0) {
+        var fadeTime = chatFade * 1000;
+        if (animation == "none") {
+            $chatElement.delay(fadeTime).hide(0).promise().done(function() {
+                $(this).remove();
+                chat_count--;
+            });
+        } else {
+            $chatElement.delay(fadeTime).hide(animation, 1000).promise().done(function() {
+                $(this).remove();
+                chat_count--;
+            });
+        }
+    } else {
+        if (chat_count > chat_count_max) {
+            chat_count--;
+            $remove_temp = $(".chat_container span:first-child");
+            $remove_temp.next().remove();
+            $remove_temp.next().remove();
+            $remove_temp.remove();
+        }
+    }
+}
+is_connected = false;
+is_init_oldver = false;
+function connect_jsassist() {
+    var ws = new WebSocket("ws://localhost:4649/JSAssistChatServer");
+    ws.onopen = function() {
+        is_connected = true;
+    }
+    ;
+    ws.onmessage = function(evt) {
+			// 나이트봇 채팅을 미출력처리
+			if(data.username == "Nightbot") {
+				return;
+			}
+        var data = JSON.parse(evt.data);
+        if (data.type == "chat_message") {
+            if (platform != "all") {
+                if (platform != data.platform) {
+                    return;
+                }
+            }
+            addChatMessage(data.platform, data.username, data.message);
+        } else if (data.type == "config") {
+            setConfig(data);
+        } else {
+            if (data.type == undefined) {
+                if (is_init_oldver == false) {
+                    platformIcon = true;
+                    platform = "all";
+                    animation = "fade";
+                    chatFade = chat_fade;
+                    font = "Jeju Gothic";
+                    fontUsernameSize = 14;
+                    fontUsernameColor = "255, 255, 255";
+                    fontChatSize = 16;
+                    fontChatColor = "255, 255, 255";
+                    backgroundColor = "255, 255, 255";
+                    backgroundAlpha = 0;
+                    chatBackgroundColor = "255, 255, 255";
+                    chatBackgroundAlpha = 0.25;
+                    is_init_oldver = true;
+                }
+                addChatMessage(data.platform, data.username, data.message);
+            }
+        }
+    }
+    ;
+    ws.onclose = function() {
+        is_connected = false;
+        setTimeout(connect_jsassist, 1000);
+    }
+    ;
+}
