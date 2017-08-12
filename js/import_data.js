@@ -55,7 +55,6 @@ function init(dcconList) {
 			}
 			
 			/* 구독콘을 등록 */
-			addChatMessage("twitch", "맛물", "트위치 구독콘 로딩");
 			$.getJSON(
 				'https://twitchemotes.com/api_cache/v2/subscriber.json',
 				function(data2) {
@@ -65,8 +64,6 @@ function init(dcconList) {
 							for (var emote_index in channel.emotes) {
 								var emote = channel.emotes[emote_index];
 								twitchEmotesMap[emote.code] = emote.image_id;
-								preloadImage(twitchEmotesUrlTemplate.split(
-									'{image_id}').join(emote.image_id));
 							}
 						}
 					}
