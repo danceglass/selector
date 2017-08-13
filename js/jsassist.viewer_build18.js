@@ -158,7 +158,7 @@ function connect_jsassist() {
 				var data;
 				if(evt.data.indexOf("platform") && evt.data.indexOf("message") && evt.data.indexOf("username")) {
 						var innerText = evt.data.split(/message\" : \"(.*)/g)[1];
-						innerText = innerText.slice(0, innerText.lastIndexOf('", "type')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+						innerText = innerText.slice(0, innerText.lastIndexOf('", "username')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
 						
 						data = JSON.parse(evt.data.replace(/(message\" : \")(.*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
 				} else {
