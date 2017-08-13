@@ -61,11 +61,17 @@ html								{	font-family:'Jeju Gothic', serif !important;
 											font-size:20px !important; }
 .chat_text_nickname,
 .chat_text_message	{	font-family:inherit !important; color: white !important;
-											text-shadow:
-												-1px -1px 1px rgb(192,80,12), -1px   0 1px rgb(192,80,12),
-												-1px  1px 1px rgb(192,80,12),    0 1px 1px rgb(192,80,12),
-												 1px  1px 1px rgb(192,80,12),  1px   0 1px rgb(192,80,12),
-												 1px -1px 1px rgb(192,80,12),   0 -1px 1px rgb(192,80,12); }
+											 text-shadow:
+												-1px -1px 1px rgb(123,56,18), -1px   0 1px rgb(123,56,18),
+												-1px  1px 1px rgb(123,56,18),    0 1px 1px rgb(123,56,18),
+												 1px  1px 1px rgb(123,56,18),  1px   0 1px rgb(123,56,18),
+												 1px -1px 1px rgb(123,56,18),   0 -1px 1px rgb(123,56,18),
+    
+    										-1px -1px 3px rgba(192,80,12,0.8), -1px   0 3px rgba(192,80,12,0.8),
+												-1px  1px 3px rgba(192,80,12,0.8),    0 1px 3px rgba(192,80,12,0.8),
+												 1px  1px 3px rgba(192,80,12,0.8),  1px   0 3px rgba(192,80,12,0.8),
+												 1px -1px 3px rgba(192,80,12,0.8),   0 -1px 3px rgba(192,80,12,0.8); 
+ }
 .chat_text_nickname	{	font-size:0.9em !important; }
 .chat_text_message	{	font-size:1em !important; }
 
