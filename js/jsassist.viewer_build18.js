@@ -107,7 +107,7 @@ function addChatMessage(platform, nickname, message) {
     var chatNickname = "<span class='" + stylePlatform + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";
 //    var msg = $("<div>" + message + "</div>").text().
 		var msg = message.replace(/\"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var chatMessage = "<div class='chat_text_message' style='display:none'>" + msg + "</div>";
+    var chatMessage = "<div class='chat_text_message' style='display:none'><div class="chat_text_message_inner">" + msg + "</div></div>";
 
     var $chatElement = $(chatNickname + chatMessage);
     $chatElement.appendTo($(".chat_container"));

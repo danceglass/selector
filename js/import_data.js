@@ -115,8 +115,6 @@ function init(dcconList) {
 		var msg = originalJqueryText.apply(this, arguments);
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
-		/* image_border를 상쇄시키기 위해 chat_text_message 안에 div를 하나 더 추가 */
-		msg = '<div class="chat_text_message_inner">' + msg + '</div>';
 		return msg;
 	};
 	
