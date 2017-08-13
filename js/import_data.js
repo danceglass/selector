@@ -85,7 +85,7 @@ function init(dcconList) {
 		}
 		
 		
-		if (message.replace(/\s*<[^<>]*>\s*/g, "").length == 0) {
+		if (message.replace(/\s*<img[^<>]*>\s*/g, "").length == 0) {
 			message = '<center>' + message + '</center>'; }
 		return message;
 	}
