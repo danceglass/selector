@@ -156,9 +156,10 @@ function connect_jsassist() {
     ws.onmessage = function(evt) {
 				// 이스케이프 문자 처리 후 JSON 파싱
 				var data;
-				if(evt.data.indexOf("platform") && evt.data.indexOf("message") && evt.data.indexOf("username")) {
+				if (evt.data.includes("platform") && evt.data.includes("message") && evt.data.includes("username") && evt.data.includes("type")) {
+alert(evt.data);
 						var innerText = evt.data.split(/message\"[\s]+:[\s]+\"(.*)/g)[1];
-						innerText = innerText.slice(0, innerText.lastIndexOf("username"));
+						innerText = innerText.slice(0, innerText.lastIndexOf("type"));
 						innerText = innerText.slice(0, innerText.lastIndexOf('"'));
 						innerText = innerText.slice(0, innerText.lastIndexOf('"')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
 						
