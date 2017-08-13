@@ -105,12 +105,14 @@ function addChatMessage(platform, nickname, message) {
         stylePlatform += "none";
     }
     var chatNickname = "<span class='" + stylePlatform + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";
-    var msg = $("<div>" + message + "</div>").text();
+//    var msg = $("<div>" + message + "</div>").text().
+		var msg = message.replace(/\"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     var chatMessage = "<div class='chat_text_message' style='display:none'>" + msg + "</div>";
+
     var $chatElement = $(chatNickname + chatMessage);
     $chatElement.appendTo($(".chat_container"));
     updateStyle();
-    if (animation == "none") {
+/*    if (animation == "none") {
         $chatElement.show();
     } else {
         $chatElement.show(animation, {
@@ -118,6 +120,7 @@ function addChatMessage(platform, nickname, message) {
             direction: "down"
         });
     }
+*/	$chatElement.show(); // JSA 애니메이션 설정 무효화
     chat_count++;
     if (chatFade != 0) {
         var fadeTime = chatFade * 1000;
@@ -151,7 +154,16 @@ function connect_jsassist() {
     }
     ;
     ws.onmessage = function(evt) {
-        var data = JSON.parse(evt.data);
+				// 이스케이프 문자 처리 후 JSON 파싱
+				var data;
+				if((evt.data.indexOf("platform")+1)*(evt.data.indexOf("message")+1)*(evt.data.indexOf("username")+1)) {
+						var innerText = evt.data.split(/message\" : \"(.*)/g)[1];
+						innerText = innerText.slice(0, innerText.lastIndexOf('", "type')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+						
+						data = JSON.parse(evt.data.replace(/(message\" : \")(.*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
+				} else {
+						data = JSON.parse(evt.data);
+				}
 				
 				
         // 나이트봇 채팅을 미출력처리
