@@ -157,10 +157,10 @@ function connect_jsassist() {
 				// 이스케이프 문자 처리 후 JSON 파싱
 				var data;
 				if(evt.data.indexOf("platform") && evt.data.indexOf("message") && evt.data.indexOf("username")) {
-						var innerText = evt.data.split(/message\" : \"(.*)/g)[1];
+						var innerText = evt.data.split(/message\"[\s]+:[\s]+\"(.*)/g)[1];
 						innerText = innerText.slice(0, innerText.lastIndexOf('", "username')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
 						
-						data = JSON.parse(evt.data.replace(/(message\" : \")(.*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
+						data = JSON.parse(evt.data.replace(/(message\"[\s]+:[\s]+\")(.*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
 				} else {
 						data = JSON.parse(evt.data);
 				}
