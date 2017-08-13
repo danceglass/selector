@@ -116,6 +116,7 @@ function init(dcconList) {
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		
+		msg = msg.replace('"', '\\"');
 		/* image_border를 상쇄시키기 위해 chat_text_message 안에 div를 하나 더 추가 */
 		msg = '<div class="chat_text_message_inner">' + msg + '</div>';
 		return msg;
