@@ -117,7 +117,7 @@ function init(dcconList) {
 		msg = replaceTwitchEmotes(msg);
 		
 		// 폰트 변경을 위해 백슬래시 파싱
-		msg = msg.replace(/(\\+)/g, '<span class="backslash">$1</span>');
+		msg = msg.replace(/(\\+)/g, '<span class="backslash">$1$1</span>');
 		return msg;
 	};
 	
