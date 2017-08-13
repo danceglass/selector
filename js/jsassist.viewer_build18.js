@@ -157,7 +157,6 @@ function connect_jsassist() {
 				// 이스케이프 문자 처리 후 JSON 파싱
 				var data;
 				if (evt.data.includes("platform") && evt.data.includes("message") && evt.data.includes("username") && evt.data.includes("type")) {
-alert(evt.data);
 						var innerText = evt.data.split(/message\"[\s]+:[\s]+\"(.*)/g)[1];
 						innerText = innerText.slice(0, innerText.lastIndexOf("type"));
 						innerText = innerText.slice(0, innerText.lastIndexOf('"'));
