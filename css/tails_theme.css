@@ -71,7 +71,7 @@ html								{	font-family:'Jeju Gothic', serif !important;
 
 span.backslash			{	font-family:'Noto Sans KR' !important;
 											font-size:0.88em; letter-spacing:0.9px;
-											font-weight:800; font-strtch:ultra-expanded; }
+											font-weight:800; padding:0 2px; }
 											
 											
 /* ÇÃ·§Æû Ç¥±â Á¦°Å */
