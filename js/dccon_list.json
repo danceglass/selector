@@ -424,10 +424,6 @@
 		{"keywords":["토드분노"], "tags":["베데스다"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/토드분노.png"},
 		{"keywords":["게이븐"], "tags":["스팀", "밸브"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/게이븐.png"},
 
-		{"keywords":["역자평가"], "tags":["주토피아", "피닉", "역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역자평가.png"},
-		{"keywords":["역가평가", "이그레인평가"], "tags":["역가"], "path":"http://server.telk.kr:8056/%EC%97%AD%EA%B0%80%ED%8F%89%EA%B0%80.png"},
-		{"keywords":["식자평가"], "tags":["주토피아", "닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/식자평가.png"},
-
 		{"keywords":["사이버망령"], "tags":["케장콘", "록맨", "고인"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/사이버망령.png"},
 		{"keywords":["저딴망겜"], "tags":["케장콘", "이지붐"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/저딴망겜.png"},
 
@@ -438,6 +434,9 @@
 		{"keywords":["4딸라"], "tags":["김두한", "야인시대"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/사딸라.png"},
 		{"keywords":["오케이땡큐"], "tags":["김두한", "야인시대"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/오케이땡큐.png"},
 		
-		{"keywords":["구독냥이", "꾸동냥이"], "tags":["역가"], "path":"http://server.telk.kr:8056/%EA%BE%B8%EB%8F%99%EB%83%A5%EC%9D%B4.png"}
+		{"keywords":["식자평가"], "tags":["주토피아", "닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/식자평가.png"},
+		{"keywords":["역자평가"], "tags":["주토피아", "피닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역자평가.png"},
+		{"keywords":["역가평가", "이그레인평가"], "tags":["역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역가평가.png"},
+		{"keywords":["구독냥이", "꾸동냥이"], "tags":["역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/꾸동냥이.png"}
 	]
 }
