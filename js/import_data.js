@@ -117,6 +117,7 @@ function init(dcconList) {
 	originalJqueryText = jQuery.fn.text;
 	function hackedJqueryText() {
 		var msg = originalJqueryText.apply(this, arguments);
+		msg = msg.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
 		msg = makeImageCenter(msg);
