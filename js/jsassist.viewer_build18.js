@@ -159,12 +159,13 @@ function connect_jsassist() {
 				// 이스케이프 문자 처리 후 JSON 파싱
 				var data;
 				if (evt.data.includes("platform") && evt.data.includes("message") && evt.data.includes("username") && evt.data.includes("type")) {
-						var innerText = evt.data.split(/message\"[\s]+:[\s]+\"(.*)/g)[1];
+						var innerText = evt.data.split(/message\"[\s]+:[\s]+\"([\s\S]*)/g)[1];
 						innerText = innerText.slice(0, innerText.lastIndexOf("type"));
 						innerText = innerText.slice(0, innerText.lastIndexOf('"'));
 						innerText = innerText.slice(0, innerText.lastIndexOf('"')).replace(/\\/g, '\\\\').replace(/\"/g, '\\"');
+						innerText = innerText.replace(/(\r\n|\n|\r)/g,"\\n");
 						
-						data = JSON.parse(evt.data.replace(/(message\"[\s]+:[\s]+\")(.*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
+						data = JSON.parse(evt.data.replace(/(message\"[\s]+:[\s]+\")([\s\S]*)/g, "$1" + innerText + evt.data.slice(evt.data.lastIndexOf('", "type'))));
 				} else {
 						data = JSON.parse(evt.data);
 				}
