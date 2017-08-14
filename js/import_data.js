@@ -84,9 +84,6 @@ function init(dcconList) {
 			}
 		}
 		
-		
-		if (message.replace(/\s*<img[^<>]*>\s*/g, "").length == 0) {
-			message = '<center>' + message + '</center>'; }
 		return message;
 	}
 	
@@ -110,11 +107,19 @@ function init(dcconList) {
 		return message;
 	}
 	
+	function makeImageCenter(message) {
+		if (message.replace(/\s*<img[^<>]*>\s*/g, "").length == 0) {
+			message = '<center>' + message + '</center>'; }
+			
+		return message;
+	}
+	
 	originalJqueryText = jQuery.fn.text;
 	function hackedJqueryText() {
 		var msg = originalJqueryText.apply(this, arguments);
 		msg = replaceDccon(msg);
 		msg = replaceTwitchEmotes(msg);
+		msg = makeImageCenter(msg);
 		
 		// 폰트 변경을 위해 백슬래시 파싱
 		msg = msg.replace(/(\\+)/g, '<span class="backslash">$1</span>');
