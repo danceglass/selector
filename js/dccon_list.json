@@ -424,7 +424,8 @@
 		{"keywords":["토드분노"], "tags":["베데스다"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/토드분노.png"},
 		{"keywords":["게이븐"], "tags":["스팀", "밸브"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/게이븐.png"},
 
-		{"keywords":["역자평가", "역가평가", "이그레인평가"], "tags":["주토피아", "피닉", "역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역자평가.png"},
+		{"keywords":["역자평가"], "tags":["주토피아", "피닉", "역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역자평가.png"},
+		{"keywords":["역가평가", "이그레인평가"], "tags":["역가"], "path":"http://server.telk.kr:8056/%EC%97%AD%EA%B0%80%ED%8F%89%EA%B0%80.png"},
 		{"keywords":["식자평가"], "tags":["주토피아", "닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/식자평가.png"},
 
 		{"keywords":["사이버망령"], "tags":["케장콘", "록맨", "고인"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/사이버망령.png"},
