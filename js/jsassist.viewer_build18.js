@@ -105,7 +105,7 @@ function addChatMessage(platform, nickname, message) {
         stylePlatform += "none";
     }
     var chatNickname =
-"<span class='" + stylePlatform + " usr_" + nickname + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";		
+"<span class='" + stylePlatform + "'" + style + "/><span class='chat_text_nickname usr_" + nickname +  "' style='display:none'>" + nickname + "</span>";		
 //    var msg = $("<div>" + message + "</div>").text();
 		var msg = message.replace(/\"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");	// "랑 태그 삭제현상 처리
 		msg = $("<div>" + msg + "</div>").text();
