@@ -93,7 +93,8 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 .chat_text_nickname.usr_yeokka				{	font-size:0 !important;
 																				width:95px; height:34px; }
 .chat_text_nickname.usr_yeokka::after	{	content:none; display:none; }
-.chat_text_message.usr_yeokka					{	height:130px !important; }
+.chat_text_message.usr_yeokka					{	height:130px !important;
+																				display:table; width:100%; }
 .chat_text_message.usr_yeokka::before	{	content:"";
 																				background-image:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_char.png);
@@ -101,4 +102,6 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 																				width:102px; height:139px;
 																				position:absolute; display:block;
 																				margin:-23px 0 0 -14px; }
-.usr_yeokka .chat_Text_message_inner	{	padding-left:100px; }
+.usr_yeokka .chat_Text_message_inner	{	padding-left:100px; 
+																				display:table-cell;
+																				vertical-align:middle; }
