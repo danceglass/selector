@@ -62,7 +62,8 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_ear.png);
 											border-image-slice:9 26 0 26 fill;
 											border-width:9px 26px 0 26px; }
-.chat_text_message	{	border-image-source:url(:
+.chat_text_message	{	background-color:transparent !important;
+											border-image-source:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_body.png);
 											border-image-slice:6 39 6 6 fill;
 											border-image-repeat:repeat;
