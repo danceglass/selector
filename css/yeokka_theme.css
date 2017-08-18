@@ -61,14 +61,14 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 .chat_text_nickname	{	border-image-source:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_ear.png);
 											border-image-slice:9 26 0 fill;
-											border-width:9px 26px 0; }
+											border-width:9px 26px 0;
+											margin:1px 0 0; }
 .chat_text_message	{	background-color:transparent !important;
 											border-image-source:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_body.png);
 											border-image-slice:6 39 6 6 fill;
 											border-image-repeat:repeat;
 											border-width:6px 39px 6px 6px;
-											margin:0 0 1px 0;
 											padding:5px 8px; }
 .chat_text_nickname:after	{
 											content:"";
