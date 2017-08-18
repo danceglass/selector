@@ -90,11 +90,16 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 														margin:-30px 3px 0 0; }
 														
 /* 스트리머 스으페샬 */
+@keyframes UpgradedToBottom {
+    0% { transform:translateY(calc(-50% - 34px)) scaleY(0); }
+    to { transform:none; } }
 .chat_text_nickname.usr_yeokka				{	font-size:0 !important;
-																				width:95px; height:34px; }
+																				width:95px; height:34px;
+											animation:ToBottom 1s ease forwards; }
 .chat_text_nickname.usr_yeokka::after	{	content:none; display:none; }
 .chat_text_message.usr_yeokka					{	height:130px !important;
-																				display:table; width:100%; }
+																				display:table; width:100%;
+											animation:UpgradedToBottom 1s ease forwards; }
 .chat_text_message.usr_yeokka::before	{	content:"";
 																				background-image:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_char.png);
