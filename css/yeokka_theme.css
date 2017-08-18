@@ -76,7 +76,8 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_tail.png); }											
 .chat_text_message_inner {
 											margin:0 -33px 0 0;
-											/* message_t_margin - message_b_margin*/ }
+											/* message_t_margin - message_b_margin*/
+											padding:6px 2px 2px; }
 
 /* 닉네임 위치 설정 */
 .chat_text_nickname {	display:inline-block;
