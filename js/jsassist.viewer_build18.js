@@ -104,12 +104,14 @@ function addChatMessage(platform, nickname, message) {
     } else {
         stylePlatform += "none";
     }
-    var chatNickname = "<span class='" + stylePlatform + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";		
+    var chatNickname =
+"<span class='" + stylePlatform + " usr_" + nickname + "'" + style + "/><span class='chat_text_nickname' style='display:none'>" + nickname + "</span>";		
 //    var msg = $("<div>" + message + "</div>").text();
 		var msg = message.replace(/\"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");	// "랑 태그 삭제현상 처리
 		msg = $("<div>" + msg + "</div>").text();
 		/* image-border 상쇄용 inner div 추가 */
-    var chatMessage = "<div class='chat_text_message' style='display:none'><div class='chat_text_message_inner'>" + msg + "</div></div>";
+    var chatMessage = 
+"<div class='chat_text_message usr_" + nickname + "' style='display:none'><div class='chat_text_message_inner'>" + msg + "</div></div>";
     var $chatElement = $(chatNickname + chatMessage);
     $chatElement.appendTo($(".chat_container"));
     updateStyle();
