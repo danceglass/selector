@@ -1,0 +1,88 @@
+/* 폰트 로드 */
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 애니메이션 정의 */
+@keyframes ToBottom {
+	0%	{ transform:translateY(-50%) scaleY(0); }
+	to	{ transform:none; } }
+.chat_text_message	{ animation:ToBottom 1s ease forwards; }
+
+/* 채팅창 위치 기본 설정 */
+html, body			{ margin:0; padding:0; overflow:hidden; }
+.chat_wrapper		{ position:relative; height:100%; }
+.chat_container	{ position:absolute; width:100%; bottom:0; }
+
+/* 플랫폼 이미지 제거 */
+.chat_platform_twitch,
+.chat_platform_youtube,
+.chat_platform_tvpot,
+.chat_platform_none			{ display:none !important; 
+													width:0; margin:0; padding:0; }
+					
+/* 디시콘, 감정표현 조정 */
+.dccon,
+.twitch_emote	{ max-width:100%; max-height:100%; vertical-align:middle; }
+.dccon				{	height:100px; }
+.twitch_emote	{	height:50px; }
+
+
+/* 폰트 설정 */
+html								{	font-family:'Jeju Gothic', serif !important;
+											font-size:20px !important; }
+.chat_text_nickname,
+.chat_text_message	{	font-family:inherit !important; color: white !important; }
+.chat_text_nickname	{	font-size:0.75em !important; letter-spacing:0.5px; }
+.chat_text_message	{	font-size:1em !important;
+											text-shadow:
+												-1px -1px 1px rgba(40,79,229,0.8), -1px   0 1px rgba(40,79,229,0.8),
+												-1px  1px 1px rgba(40,79,229,0.8),    0 1px 1px rgba(40,79,229,0.8),
+												 1px  1px 1px rgba(40,79,229,0.8),  1px   0 1px rgba(40,79,229,0.8),
+												 1px -1px 1px rgba(40,79,229,0.8),   0 -1px 1px rgba(40,79,229,0.8),
+    
+    										-1px -1px 3px rgb(0,25,205), -1px   0 3px rgb(0,25,205),
+												-1px  1px 3px rgb(0,25,205),    0 1px 3px rgb(0,25,205),
+												 1px  1px 3px rgb(0,25,205),  1px   0 3px rgb(0,25,205),
+												 1px -1px 3px rgb(0,25,205),   0 -1px 3px rgb(0,25,205); }
+
+/* 백슬래시 지역화(원화기호로 표시 안되게) */
+span.backslash			{	font-family:'Noto Sans KR' !important;
+											font-size:0.88em; letter-spacing:0.9px;
+											font-weight:800; padding:0 2px;
+											transform:scaleX(1.08); display:inline-block; }
+							
+/* 채팅 길이 제한 */
+.chat_text_message_inner	{	max-height:100px; overflow:hidden; }
+											
+
+/* 채팅창 이미지 설정 */
+.chat_text_nickname,
+.chat_text_message	{	border-style:solid; box-sizing:border-box; }
+.chat_text_nickname	{	border-image-source:
+	url(https://krynen.github.io/jsassist-custom-css/images/yeok_ear.png);
+											border-image-slice:9 26 0 26 fill;
+											border-width:9px 26px 0 26px; }
+.chat_text_message	{	border-image-source:url(:
+	url(https://krynen.github.io/jsassist-custom-css/images/yeok_body.png);
+											border-image-slice:6 39 6 6 fill;
+											border-image-repeat:repeat;
+											border-width:6px 39px 6px 6px;
+											margin:0 0 1px 0;
+											padding:5px 8px; }
+.chat_text_nickname:after	{
+											content:"";
+											background-image:
+	url(https://krynen.github.io/jsassist-custom-css/images/yeok_tail.png); }											
+.chat_text_message_inner {
+											margin:0 -33px 0 0;
+											/* message_t_margin - message_b_margin*/ }
+
+/* 닉네임 위치 설정 */
+.chat_text_nickname {	display:inline-block;
+											padding:5px 2px 0 5px;
+											min-width:40px; text-align:center; }
+											
+/* 꼬리 달기 */
+.chat_text_nickname:after {	display:block; position:absolute; right:0;
+														height:30px; width:40px;
+														margin:-30px 3px 0 0; }
