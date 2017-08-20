@@ -6,7 +6,7 @@
 @keyframes ToBottom {
 	0%	{ transform:translateY(-50%) scaleY(0); }
 	to	{ transform:none; } }
-.chat_text_message	{ animation:ToBottom 1s ease forwards; }
+.chat_text_message	{ animation:ToBottom .5s ease forwards; }
 
 /* 채팅창 위치 기본 설정 */
 html, body			{ margin:0; padding:0; overflow:hidden; }
@@ -95,11 +95,11 @@ span.backslash			{	font-family:'Noto Sans KR' !important;
     to { transform:none; } }
 .chat_text_nickname.usr_yeokka				{	font-size:0 !important;
 																				width:95px; height:34px;
-											animation:ToBottom 1s ease forwards; }
+											animation:ToBottom .5s ease forwards; }
 .chat_text_nickname.usr_yeokka::after	{	content:none; display:none; }
 .chat_text_message.usr_yeokka					{	height:130px !important;
 																				display:table; width:100%;
-											animation:UpgradedToBottom 1s ease forwards; }
+											animation:UpgradedToBottom .5s ease forwards; }
 .chat_text_message.usr_yeokka::before	{	content:"";
 																				background-image:
 	url(https://krynen.github.io/jsassist-custom-css/images/yeok_char.png);
