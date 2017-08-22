@@ -437,6 +437,8 @@
 		{"keywords":["식자평가"], "tags":["주토피아", "닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/식자평가.png"},
 		{"keywords":["역자평가"], "tags":["주토피아", "피닉"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역자평가.png"},
 		{"keywords":["역가평가", "이그레인평가"], "tags":["역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/역가평가.png"},
-		{"keywords":["구독냥이", "꾸동냥이"], "tags":["역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/꾸동냥이.png"}
+		{"keywords":["구독냥이", "꾸동냥이"], "tags":["역가"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/꾸동냥이.png"},
+		
+		{"keywords":["무말모"], "tags":["케장콘"], "path":"https://krynen.github.io/jsassist-custom-css/images/dccons/무말모.png"}
 	]
 }
