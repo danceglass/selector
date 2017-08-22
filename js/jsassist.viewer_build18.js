@@ -193,7 +193,6 @@ function connect_jsassist() {
                     platform = "all";
                     animation = "fade";
                     chatFade = chat_fade;
-                    font = "Jeju Gothic";
                     fontUsernameSize = 14;
                     fontUsernameColor = "255, 255, 255";
                     fontChatSize = 16;
