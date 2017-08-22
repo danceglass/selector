@@ -1,6 +1,7 @@
 /* 폰트 로드 */
 @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
 /* 애니메이션 정의 */
 @keyframes ToLeft {
@@ -29,7 +30,7 @@ html, body			{ margin:0; padding:0; overflow:hidden; }
 
 											
 /* 폰트 설정 */
-html								{	font-family:'Jeju Gothic', serif !important;
+html								{	font-family:'cwtexyen', 'Jeju Gothic', serif !important;
 											font-size:20px !important; }
 .chat_text_nickname,
 .chat_text_message	{	font-family:inherit !important; color: white !important;
