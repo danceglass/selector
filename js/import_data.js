@@ -24,7 +24,7 @@ function init(dcconList) {
 
 	var dcconSearchMap = {};		// keyword로 dccon을 검색하기 위한 맵
 	var dcconKeywordList = [];	// 전체 keyword 리스트
-	var twitchEmotesUrlTemplate = "";
+	var twitchEmotesUrlTemplate = "https://static-cdn.jtvnw.net/emoticons/v1/";
 	var twitchEmotesMap = {};
 	
 	/* url에서 받아온 각 디씨콘을 맵과 리스트에 등록 */
@@ -40,26 +40,25 @@ function init(dcconList) {
 	}
 	
 	/* 트위치 이모티콘을 맵과 템플릿에 등록 */
-	$.getJSON('https://twitchemotes.com/api_cache/v2/global.json',
+	$.getJSON('https://twitchemotes.com/api_cache/v3/global.json',
 		function(data1) {
-			twitchEmotesUrlTemplate = data1.template.medium;
-			for (var emote_keyword in data1.emotes) {
-				if(data1.emotes.hasOwnProperty(emote_keyword)) {
+			for (var emote_keyword in data1) {
+				if(data1.hasOwnProperty(emote_keyword)) {
 					twitchEmotesMap[emote_keyword] =
-						data1.emotes[emote_keyword].image_id;
+						data1[emote_keyword].id;
 				}
 			}
 			
 			/* 구독콘을 등록 */
 			$.getJSON(
-				'https://twitchemotes.com/api_cache/v2/subscriber.json',
+				'https://twitchemotes.com/api_cache/v3/subscriber.json',
 				function(data2) {
-					for (var channel_name in data2.channels) {
-						if (data2.channels.hasOwnProperty(channel_name)) {
-							var channel = data2.channels[channel_name];
+					for (var channel_name in data2) {
+						if (data2.hasOwnProperty(channel_name)) {
+							var channel = data2[channel_name];
 							for (var emote_index in channel.emotes) {
 								var emote = channel.emotes[emote_index];
-								twitchEmotesMap[emote.code] = emote.image_id;
+								twitchEmotesMap[emote.code] = emote.id;
 							}
 						}
 					}
@@ -95,8 +94,7 @@ function init(dcconList) {
 					var search_keyword = '\n' + emote_keyword + '\n';
 					if (message.indexOf(search_keyword) != -1) {
 						var emote_id = twitchEmotesMap[emote_keyword];
-						var emote_url = twitchEmotesUrlTemplate.split(
-							'{image_id}').join(emote_id);
+						var emote_url = twitchEmotesUrlTemplate + emote_id + "/3.0";
 						message = message.split(search_keyword).join(
 							'<img class="twitch_emote" src="' +
 							emote_url + '" />');
