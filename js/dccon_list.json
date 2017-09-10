@@ -1,5 +1,5 @@
 {
-	"dccons" [
+	"dccons" : [
 	 {"path":"https://krynen.github.io/yeokka/dccon/images/꾸동냥이.png",  "keywords":["구독냥이", "꾸동냥이"],  "tags":["역가"]},
 	 {"path":"https://krynen.github.io/yeokka/dccon/images/역가평가.png",  "keywords":["역가평가", "이그레인평가"],  "tags":["역가"]},
 	 {"path":"https://krynen.github.io/yeokka/dccon/images/역자평가.png",  "keywords":["역자평가"],  "tags":["주토피아", "피닉"]},
