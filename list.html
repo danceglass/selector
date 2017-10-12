@@ -154,17 +154,17 @@
 			if (stl!=null) { stl.remove(); }
 			stl = document.createElement("style");
 			
-			var lst = document.body.getElementsByClassName("dccon-list")[0];
-			if (lst.offsetWidth < 800)
+			var width = document.body.getElementsByClassName("dccon-list")[0].scrollWidth;
+			if (width < 800)
 			{
-				if (lst.offsetWidth < 600)
+				if (width < 600)
 				{
-					if (lst.offsetWidth < 500)
+					if (width < 500)
 					{
-						if (lst.offsetWidth < 400)
+						if (width < 400)
 						{
-							if (lst.offsetWidth < 200) { stl.innerText=".col-15{width:100%;}" }
-							else { stl.innerText=".col-15{width:50%;}" }
+							if (width < 300) { stl.innerText=".col-15{width:50%;}" }
+							else { stl.innerText=".col-15{width:33%;}" }
 						}
 						else { stl.innerText=".col-15{width:25%;}" }
 					}
